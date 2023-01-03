@@ -41,3 +41,28 @@ public class Student {
     }
 }
 
+//public String get Ime(){
+//return this.ime;
+// }
+//public String get Prezime(){
+//return this.prezime;
+// }
+//public int get BrojIndeksa(){
+//return this.brojIndeksa;
+// }
+//public boolean get DaLiJeNaBudzetu(){
+//return this.daLiJeNaBudzetu;
+// }
+
+//public void set Ime(String ime){
+//this.ime = ime;
+// }
+//public void set Prezime(String prezime){
+//this.prezime = prezime;
+// }
+// public void set BrojIndeksa(int brojIndeksa){
+//this.brojIndeksa = brojIndeksa;
+// }
+//public void set DaLiJeNaBudzetu(boolean daLiJeNaBudzetu){
+//this.daLiJeNaBudzetu = daLiJeNaBudzetu;
+// }
