@@ -84,7 +84,7 @@ public class Glavni_Program {
         igra1.setImeOIgraca(igracO);
         igra1.pokreniIgru();
 
-        while (!(igra1.popunjenaTabla() && igra1.pobednikX() && igra1.pobednik0())) {
+        while (!igra1.pobednikX() && !igra1.pobednik0() && !igra1.popunjenaTabla()){
             igra1.stampaj();
             System.out.println("Na potezu igrac "+igra1.getNaPotezu());
             System.out.print("Odigraj potez: ");
