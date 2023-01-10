@@ -71,9 +71,9 @@ package mini_projekat;
 
 import java.util.Scanner;
 
-public class Glavni_Program {
+public class GlavniProgram {
     public static void main(String[] args) {
-        XO_Tabla igra1 = new XO_Tabla();
+        XOTabla igra1 = new XOTabla();
         Scanner s = new Scanner(System.in);
 
         System.out.print("Unesite ime igraca X: ");

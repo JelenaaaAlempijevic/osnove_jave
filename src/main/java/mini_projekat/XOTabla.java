@@ -1,6 +1,6 @@
 package mini_projekat;
 
-public class XO_Tabla {
+public class XOTabla {
     private String polje1;
     private String polje2;
     private String polje3;
