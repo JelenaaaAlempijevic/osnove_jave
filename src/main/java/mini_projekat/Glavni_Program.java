@@ -84,9 +84,10 @@ public class Glavni_Program {
         igra1.setImeOIgraca(igracO);
         igra1.pokreniIgru();
 
-        while (!igra1.pobednikX() && !igra1.pobednik0() && !igra1.popunjenaTabla()){
+        while (!igra1.pobednikX() && !igra1.pobednikO() && !igra1.popunjenaTabla()) {
+
             igra1.stampaj();
-            System.out.println("Na potezu igrac "+igra1.getNaPotezu());
+            System.out.println("Na potezu igrac " + igra1.getNaPotezu());
             System.out.print("Odigraj potez: ");
             int potez = s.nextInt();
 
@@ -94,18 +95,20 @@ public class Glavni_Program {
             if (igra1.poljePrazno(potez)) {
                 igra1.odigrajPotez(potez);
                 igra1.zameniIgraca();
-            }else {
+            } else {
                 System.out.println("Potez nije validan!");
             }
         }
 
         if (igra1.pobednikX()) {
             System.out.println("Cestitamo! Pobednik je igrac X");
-        } else if (igra1.pobednik0()) {
+        } else if (igra1.pobednikO()) {
             System.out.println("Cestitamo! Pobednik je igrac O");
-        }else {
+        } else {
             System.out.println("Igra je neresena!");
         }
+
+
     }
     }
 

@@ -14,26 +14,29 @@ public class XO_Tabla {
     private String imeOIgraca;
     private String naPotezu;
 
-    public String getImeXIgraca(){
+
+    public String getImeXIgraca() {
         return this.imeXIgraca;
     }
 
-    public String getImeOIgraca(){
+    public String getImeOIgraca() {
         return this.imeOIgraca;
     }
 
-    public String getNaPotezu(){
+    public String getNaPotezu() {
         return this.naPotezu;
     }
 
-    public void setImeXIgraca(String imeXIgraca){
-        this.imeXIgraca = imeXIgraca;
+    public void setImeXIgraca(String imeIgraca) {
+        this.imeXIgraca = imeIgraca;
     }
 
-    public void setImeOIgraca(String imeOIgraca){
-        this.imeOIgraca = imeOIgraca;
+    public void setImeOIgraca(String imeIgraca) {
+        this.imeOIgraca = imeIgraca;
     }
-     public void pokreniIgru(){
+
+
+    public void pokreniIgru() {
         this.polje1 = " ";
         this.polje2 = " ";
         this.polje3 = " ";
@@ -46,17 +49,17 @@ public class XO_Tabla {
 
         this.naPotezu = "X";
 
-     }
+    }
 
-     public void stampaj(){
-         System.out.println(this.polje1 + "|" + this.polje2 + "|" + this.polje3);
-         System.out.println(this.polje4 + "|" + this.polje5 + "|" + this.polje6);
-         System.out.println(this.polje7 + "|" + this.polje8 + "|" + this.polje9);
-         System.out.println();
-         System.out.println("Igrac X: " + this.imeXIgraca);
-         System.out.println("Igrac O: " + this.imeOIgraca);
+    public void stampaj() {
+        System.out.println(this.polje1 + "|" + this.polje2 + "|" + this.polje3);
+        System.out.println(this.polje4 + "|" + this.polje5 + "|" + this.polje6);
+        System.out.println(this.polje7 + "|" + this.polje8 + "|" + this.polje9);
+        System.out.println();
+        System.out.println("Igrac X: " + this.imeXIgraca);
+        System.out.println("Igrac O: " + this.imeOIgraca);
+    }
 
-     }
     public boolean poljePrazno(int indeksPolja) {
         if (indeksPolja == 1) {
             if (this.polje1.equals(" ")) {
@@ -181,18 +184,18 @@ public class XO_Tabla {
 
     }
 
-    public boolean pobednik0() {
-        if (this.polje1.equals("O") && this.polje2.equals("0") && this.polje3.equals("O")) {
+    public boolean pobednikO() {
+        if (this.polje1.equals("O") && this.polje2.equals("O") && this.polje3.equals("O")) {
             return true;
-        } else if (this.polje4.equals("O") && this.polje5.equals("0") && this.polje6.equals("O")) {
+        } else if (this.polje4.equals("O") && this.polje5.equals("O") && this.polje6.equals("O")) {
             return true;
-        } else if (this.polje7.equals("O") && this.polje8.equals("0") && this.polje9.equals("0")) {
+        } else if (this.polje7.equals("O") && this.polje8.equals("O") && this.polje9.equals("O")) {
             return true;
-        } else if (this.polje1.equals("0") && this.polje4.equals("0") && this.polje7.equals("0")) {
+        } else if (this.polje1.equals("O") && this.polje4.equals("O") && this.polje7.equals("O")) {
             return true;
-        } else if (this.polje2.equals("0") && this.polje5.equals("0") && this.polje8.equals("0")) {
+        } else if (this.polje2.equals("O") && this.polje5.equals("O") && this.polje8.equals("O")) {
             return true;
-        } else if (this.polje3.equals("0") && this.polje6.equals("O") && this.polje9.equals("O")) {
+        } else if (this.polje3.equals("O") && this.polje6.equals("O") && this.polje9.equals("O")) {
             return true;
         } else if (this.polje1.equals("O") && this.polje5.equals("O") && this.polje9.equals("O")) {
             return true;
