@@ -16,14 +16,13 @@ public class ClanskaKarta {
         return brojKartice;
     }
 
-    public void setBrojKartice(String brojKartice) {
-        this.brojKartice = brojKartice;
-    }
-
     public ClanskaKarta(double popust, String brojKartice){
         this.popust = popust;
         this.brojKartice = brojKartice;
     }
+ public ClanskaKarta(String brojKartice){
+        this.brojKartice = brojKartice;
+ }
 
 }
 

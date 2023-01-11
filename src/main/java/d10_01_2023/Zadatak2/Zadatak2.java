@@ -29,14 +29,16 @@ package d10_01_2023.Zadatak2;
 public class Zadatak2 {
     public static void main(String[] args) {
 
-        Proizvod p = new Proizvod("banane",130);
-        ClanskaKarta c = new ClanskaKarta(9, "9329-0239");
-        Kupac d = new Kupac("Jelena Alempijevic");
+        Proizvod stolica = new Proizvod("Krevet","Marko",3000);
+        Proizvod frizider = new Proizvod("Frizider","Petar",3000);
 
-        p.setImeIPrezime(d);
-        d.setBrojKartice(c);
-        p.stampajProizvod();
+        Kupac prvi = new Kupac("Petar Petrovic","658-145");
+        Kupac drugi = new Kupac("Jelena Alempijevic","456-982");
 
+        ClanskaKarta prva = new ClanskaKarta(30,"657-458");
+        ClanskaKarta druga = new ClanskaKarta(10,"589-412");
 
+        prvi.setBrojKartice(prva);
+        prvi.stampajKupac();
     }
 }

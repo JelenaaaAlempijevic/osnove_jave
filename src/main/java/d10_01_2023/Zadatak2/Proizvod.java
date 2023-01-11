@@ -1,51 +1,75 @@
 package d10_01_2023.Zadatak2;
 
-public class Proizvod {
-    private String nazivProizvoda;
-    private double cena;
+    public class Proizvod {
 
-    private Kupac imeIPrezime;
+        private String naziv;
+        private String kupac;
+        private int cenaIzrade;
+        private ClanskaKarta pospustClanskaKarta;
+        private Kupac imeIprezime;
+        private ClanskaKarta brojClanskeKarte;
 
-    public void setImeIPrezime(Kupac imeIPrezime){
-        this.imeIPrezime = imeIPrezime;
+        public String getNaziv() {
+            return naziv;
+        }
+
+        public String getKupac() {
+            return kupac;
+        }
+
+        public int getCenaIzrade() {
+            return cenaIzrade;
+        }
+
+        public void setKupac(String kupac) {
+            this.kupac = kupac;
+        }
+
+        public void setCenaIzrade(int cenaIzrade) {
+            this.cenaIzrade = cenaIzrade;
+        }
+
+        public ClanskaKarta getPospustClanskaKarta() {
+            return pospustClanskaKarta;
+        }
+
+        public void setPospustClanskaKarta(ClanskaKarta pospustClanskaKarta) {
+            this.pospustClanskaKarta = pospustClanskaKarta;
+        }
+
+        public Kupac getImeIprezime() {
+            return imeIprezime;
+        }
+
+        public void setImeIprezime(Kupac imeIprezime) {
+            this.imeIprezime = imeIprezime;
+        }
+
+        public ClanskaKarta getBrojClanskeKarte() {
+            return brojClanskeKarte;
+        }
+
+        public void setBrojClanskeKarte(ClanskaKarta brojClanskeKarte) {
+            this.brojClanskeKarte = brojClanskeKarte;
+        }
+
+        public Proizvod(String naziv, String kupac, int cenaIzrade) {
+            this.naziv = naziv;
+            this.kupac = kupac;
+            this.cenaIzrade = cenaIzrade;
+        }
+
+        public Proizvod(String naziv) {
+            this.naziv = naziv;
+        }
+
+        public double racunanjeCene() {
+            return this.cenaIzrade * 1.9 * (100 - this.pospustClanskaKarta.getPopust()) / 100;
+        }
+
+        public void stampaj() {
+            double cena = this.racunanjeCene();
+            System.out.println(this.naziv + " - " + cena + "\n" + this.imeIprezime.getImeIPrezime()+ this.brojClanskeKarte.getBrojKartice());
+        }
     }
 
-    private ClanskaKarta brojKarticeIPopust;
-
-    public void setBrojKarticeIPopust(ClanskaKarta brojKarticeIPopust){
-        this.brojKarticeIPopust = brojKarticeIPopust;
-    }
-
-    public String getNazivProizvoda() {
-        return nazivProizvoda;
-    }
-
-    public void setNazivProizvoda(String nazivProizvoda) {
-        this.nazivProizvoda = nazivProizvoda;
-    }
-
-
-    public double getCena() {
-        return cena;
-    }
-
-    public void setCena(double cena) {
-        this.cena = cena;
-    }
-
-    public Proizvod(String naziv, double cena){
-        this.nazivProizvoda = naziv;
-        this.cena = cena;
-    }
-
-    public double cenaSaPopustom(){
-        this.cena = cena * 1.9 *(100- this.brojKarticeIPopust.getPopust()) / 100;
-        return  cena;
-    }
-
-    public void stampajProizvod(){
-        System.out.println("Naziv proizvoda je: "+ this.nazivProizvoda);
-        System.out.println("Cena proizvoda je: "+ this.cena);
-        System.out.println("Ime i prezime: "+ this.imeIPrezime.getImeIPrezime() + "broj kartice: "+ this.brojKarticeIPopust.getBrojKartice());
-    }
-}
