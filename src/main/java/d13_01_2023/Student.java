@@ -9,25 +9,20 @@ public class Student {
     private String imeIPrezime;
     private String tipStudija;
 
-    private ArrayList<Ispit> nizIspita;
+    private ArrayList<Ispit> ispiti;
 
-    public Student(){
-        nizIspita = new ArrayList<Ispit>();
-    }
 
-    public void dodajIspit(Ispit nizIspita){
-        this.nizIspita.add(nizIspita);
-    }
-
-    private Ispit ispitPodaci;
-
-    public void setIspitPodaci( Ispit ispitPodaci){
-        this.ispitPodaci = ispitPodaci;
-    }
     public Student(int brojIndeksa, String imeIPrezime, String tipStudija){
       this.brojIndeksa = brojIndeksa;
       this.imeIPrezime = imeIPrezime;
       this.tipStudija = tipStudija;
+      this.ispiti = new ArrayList<>();
+    }
+
+    public Student(int brojIndeksa, String imeIPrezime){
+        this.brojIndeksa = brojIndeksa;
+        this.imeIPrezime = imeIPrezime;
+        this.ispiti = new ArrayList<>();
     }
 
 
@@ -55,13 +50,36 @@ public class Student {
         this.tipStudija = tipObuke;
     }
 
+    public ArrayList<Ispit> getIspiti() {
+        return ispiti;
+    }
+
+    public void dodajIspitUNiz(Ispit ispiti){
+        this.ispiti.add(ispiti);
+    }
+
+    public double prosek() {
+        double sumaOcena=0;
+        int brojPolozenih=0;
+        for (int i = 0; i < this.ispiti.size(); i++) {
+            if (this.ispiti.get(i).polozenIspit()) {
+                brojPolozenih++;
+                sumaOcena = sumaOcena + this.ispiti.get(i).getOcena();
+            }
+        }
+        return sumaOcena/brojPolozenih;
+    }
+
 
     public void stampaj(){
         System.out.println(this.brojIndeksa + " - "+ this.imeIPrezime+ " - "+ this.tipStudija);
         System.out.println("Predmeti:");
-        System.out.println(this.ispitPodaci.getNazivPredmeta() + " - " + this.ispitPodaci.getImeProfesora()+ " - "+ this.ispitPodaci.getOcena());
-
+        for (int i = 0; i < this.ispiti.size(); i++) {
+            System.out.println(this.ispiti.get(i).getNazivPredmeta()+ " - "
+            +this.ispiti.get(i).getImeProfesora()+ " - "
+            +this.ispiti.get(i).getOcena());
+        }
+        System.out.println("Prosecna ocena: "+ this.prosek());
     }
-
 
 }

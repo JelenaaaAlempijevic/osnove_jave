@@ -31,6 +31,7 @@ package d13_01_2023;
 
 public class Zadatak1 {
     public static void main(String[] args) {
+        Student p = new Student(250,"Mirko Babic","specijalisticke strukovne");
 
         Ispit prvi = new Ispit("epidemiologija",9,"Veselin Lukic");
         Ispit drugi = new Ispit("anatomija",8,"Branislava Dacic");
@@ -38,13 +39,14 @@ public class Zadatak1 {
         Ispit cetvrti = new Ispit("patologija",9,"Marija Markovic");
         Ispit peti = new Ispit("mikoriologija",5,"Andjela Misic");
 
-        Student p = new Student();
-        p.dodajIspit(prvi);
-        p.dodajIspit(drugi);
-        p.dodajIspit(treci);
-        p.dodajIspit(cetvrti);
-        p.dodajIspit(peti);
+        p.dodajIspitUNiz(prvi);
+        p.dodajIspitUNiz(drugi);
+        p.dodajIspitUNiz(treci);
+        p.dodajIspitUNiz(cetvrti);
+        p.dodajIspitUNiz(peti);
 
+        p.stampaj();
+        p.prosek();
 
     }
 }
