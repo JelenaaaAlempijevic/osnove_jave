@@ -1,4 +1,4 @@
-package p12_01_2022;
+package p12_01_2022.Zadatak4;
 //3.Zadatak
 //Kreirati klasu Sastojak koja ima:
 //naziv sastojka

@@ -1,4 +1,4 @@
-package p12_01_2022;
+package p12_01_2022.Zadatak4;
 
 public class Sastojak {
     private String naziv;
